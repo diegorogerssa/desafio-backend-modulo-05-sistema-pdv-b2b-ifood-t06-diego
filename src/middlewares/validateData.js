@@ -1,4 +1,4 @@
-const validateUserData = (joiSchema) => async (req, res, next) => {
+const validateData = (joiSchema) => async (req, res, next) => {
   try {
     await joiSchema.validateAsync(req.body);
     return next();
@@ -7,4 +7,4 @@ const validateUserData = (joiSchema) => async (req, res, next) => {
   }
 };
 
-module.exports = validateUserData;
+module.exports = validateData;

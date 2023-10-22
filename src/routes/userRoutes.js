@@ -1,10 +1,10 @@
 const express = require('express');
 const { registerController } = require('../controllers');
-const { validateUserData } = require('../middlewares');
+const { validateData } = require('../middlewares');
 const { schemaRegisterUser } = require('../middlewares/schemas');
 
 const user = express.Router();
 
-user.post('/usuario', validateUserData(schemaRegisterUser), registerController);
+user.post('/usuario', validateData(schemaRegisterUser), registerController);
 
 module.exports = user;

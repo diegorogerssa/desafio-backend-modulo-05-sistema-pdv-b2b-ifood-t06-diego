@@ -1,5 +1,5 @@
-const validateUserData = require('./validateUserData');
+const validateData = require('./validateData');
 
 module.exports = {
-  validateUserData,
+  validateData,
 };
