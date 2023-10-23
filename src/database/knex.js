@@ -23,6 +23,6 @@ const elephantConfig = {
 };
 
 const config = process.env.NODE_ENV === 'production' ? elephantConfig : localConfig;
-const knex = require('knex')(config);
+const knex = config;
 
 module.exports = knex;
