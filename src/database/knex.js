@@ -12,13 +12,19 @@ const localConfig = require('knex')({
   },
 });
 
-const renderConfig = {
+const elephantConfig = {
   client: 'pg',
-  connection: process.env.DATABASE_URL_RENDER, 
-  ssl: { rejectUnauthorized: false }, 
+  connection: {
+    host: process.env.POSTGRES_HOST,
+    user: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASS,
+    port: process.env.POSTGRES_PORT,
+    database: process.env.POSTGRES_DB,
+
+  }, 
 };
 
-const config = process.env.NODE_ENV === 'production' ? renderConfig : localConfig;
+const config = process.env.NODE_ENV === 'production' ? elephantConfig : localConfig;
 
 const knex = config
 

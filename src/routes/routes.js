@@ -6,10 +6,10 @@ const login = require('./loginRoutes');
 
 const routes = express.Router();
 
-routes.use(migration)
+
 routes.use(user);
 routes.use(category);
-
+routes.use(login);
 
 
 module.exports = routes;
