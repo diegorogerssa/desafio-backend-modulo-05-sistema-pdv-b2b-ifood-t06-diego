@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const localConfig = require('knex')({
+const localConfig = {
   client: 'pg',
   connection: {
     host: process.env.POSTGRES_LOCAL_HOST,
@@ -8,9 +8,8 @@ const localConfig = require('knex')({
     password: process.env.POSTGRES_LOCAL_PASS,
     port: process.env.POSTGRES_LOCAL_PORT,
     database: process.env.POSTGRES_LOCAL_DB,
-
   },
-});
+};
 
 const elephantConfig = {
   client: 'pg',
@@ -20,13 +19,10 @@ const elephantConfig = {
     password: process.env.POSTGRES_PASS,
     port: process.env.POSTGRES_PORT,
     database: process.env.POSTGRES_DB,
-
-  }, 
+  },
 };
 
 const config = process.env.NODE_ENV === 'production' ? elephantConfig : localConfig;
-
-const knex = config
-
+const knex = require('knex')(config);
 
 module.exports = knex;
