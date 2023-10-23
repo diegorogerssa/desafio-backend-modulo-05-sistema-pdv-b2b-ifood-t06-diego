@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/anjosdelacerda/desafio-backend-modulo-05-sistema-pdv-b2b-ifood-t06#readme",
   "devDependencies": {
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
     "nodemon": "^3.0.1"
   },
   "dependencies": {
