@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-
 const localConfig = require('knex')({
   client: 'pg',
   connection: {
@@ -13,7 +12,6 @@ const localConfig = require('knex')({
 });
 
 const elephantConfig = require('knex')({
-
   client: 'pg',
   connection: {
     host: process.env.POSTGRES_HOST,
