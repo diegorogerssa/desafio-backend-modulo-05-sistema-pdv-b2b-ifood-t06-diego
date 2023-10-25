@@ -1,8 +1,8 @@
 const knex = require('../../database/knex');
 
-const categoryModel = async () => {
+const listCategoryModel = async () => {
   const categories = await knex.select('descricao').from('categorias');
   return categories;
 };
 
-module.exports = categoryModel;
+module.exports = listCategoryModel;
