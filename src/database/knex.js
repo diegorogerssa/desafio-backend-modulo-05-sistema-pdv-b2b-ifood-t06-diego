@@ -12,7 +12,6 @@ const localConfig = require('knex')({
 });
 
 const elephantConfig = require('knex')({
-
   client: 'pg',
   connection: {
     host: process.env.POSTGRES_HOST,
