@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
-const comparePasswords = require('../../utils/getEncryptedPass');
 const { getUserByEmailModel } = require('../../models');
+const bcrypt = require('bcrypt');
 
 const loginService = async (email, senha) => {
   const [user] = await getUserByEmailModel(email);
@@ -9,7 +9,7 @@ const loginService = async (email, senha) => {
     throw new Error('User not found.');
   }
 
-  const isPasswordValid = await comparePasswords(senha, user.senha);
+  const isPasswordValid = await bcrypt.compare(senha, user.senha);
 
   if (!isPasswordValid) {
     throw new Error('Password invalid.');
