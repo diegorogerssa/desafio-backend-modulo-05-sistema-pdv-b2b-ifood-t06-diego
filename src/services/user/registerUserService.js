@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const { getUserByEmailModel, registerModel } = require('../../models');
 
-const registerService = async (userData) => {
+const registerUserService = async (userData) => {
   const { nome, email, senha } = userData;
 
   const [emailExists] = await getUserByEmailModel(email);
@@ -22,4 +22,4 @@ const registerService = async (userData) => {
   return registeredData;
 };
 
-module.exports = registerService;
+module.exports = registerUserService;
