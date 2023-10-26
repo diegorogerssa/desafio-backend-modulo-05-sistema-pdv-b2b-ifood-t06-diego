@@ -4,7 +4,7 @@ const detailController = async (req, res) =>{
 
     try{
 
-        const {user} = req.user 
+        const user = await req.user 
 
         return res.status(200).json(user)
 
