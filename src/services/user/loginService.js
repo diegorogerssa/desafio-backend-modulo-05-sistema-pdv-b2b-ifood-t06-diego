@@ -6,15 +6,17 @@ const loginService = async (email, senha) => {
   const [user] = await getUserByEmailModel(email);
 
   if (!user) {
-    throw new Error('User not found.');
+    throw { statusCode: 404, message: 'User not found.' };
   }
-
+  console.log(user.senha);
   const isPasswordValid = await comparePasswords(senha, user.senha);
 
   if (!isPasswordValid) {
-    throw new Error('Password invalid.');
+    throw { statusCode: 404, message: 'User not found.' };
   }
-  const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, { expiresIn: '8h' });
+  const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, {
+    expiresIn: '8h',
+  });
   return token;
 };
 
