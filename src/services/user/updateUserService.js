@@ -12,9 +12,7 @@ const updateUserService = async (userData) => {
   const [user] = await getUserByEmailModel(email);
   if (user) {
     if (user.id !== id) {
-      throw new Error(
-        'The email provided is already being used by another user.',
-      );
+      throw { statusCode: 409, message: 'The email provided is already being used by another user.' };
     }
   }
 

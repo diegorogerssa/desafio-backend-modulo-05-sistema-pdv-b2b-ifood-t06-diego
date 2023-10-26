@@ -1,12 +1,12 @@
-const { registerService } = require('../../services');
+const { registerUserService } = require('../../services');
 
-const registerController = async (req, res) => {
+const registerController = async (req, res, next) => {
   const userData = req.body;
   try {
-    const registeredData = await registerService(userData);
+    const registeredData = await registerUserService(userData);
     return res.status(201).json(registeredData);
   } catch (error) {
-    return res.status(400).json({ message: error.message });
+    return next(error);
   }
 };
 
