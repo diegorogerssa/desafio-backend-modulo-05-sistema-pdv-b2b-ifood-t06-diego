@@ -1,6 +1,6 @@
 
 
-const detailController = async (req, res) =>{
+const detailUserController = async (req, res) =>{
 
     try{
 
@@ -15,4 +15,4 @@ const detailController = async (req, res) =>{
     }
 }
 
-module.exports = detailController
+module.exports = detailUserController
