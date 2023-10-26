@@ -1,5 +1,5 @@
 const express = require('express');
-const { registerController, updateUserController } = require('../controllers');
+const { registerController, updateUserController, detailUserController } = require('../controllers');
 const { validateData, authenticationToken } = require('../middlewares');
 const { schemaRegisterUser } = require('../middlewares/schemas');
 
@@ -12,5 +12,7 @@ user.put(
   validateData(schemaRegisterUser),
   updateUserController,
 );
+user.put('/usuario', authenticationToken, validateData(schemaRegisterUser), updateUserController);
+user.get('/usuario', authenticationToken, detailUserController)
 
 module.exports = user;
