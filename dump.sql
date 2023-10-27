@@ -11,6 +11,14 @@ CREATE TABLE categorias(
   descricao VARCHAR(150) NOT NULL
 );
 
+CREATE TABLE produtos(
+  id SERIAL PRIMARY KEY,
+  descricao VARCHAR(150) NOT NULL,
+  quantidade_estoque INTEGER NOT NULL,
+  valor INTEGER NOT NULL,
+  categoria_id INTEGER NOT NULL
+);
+
 INSERT INTO categorias (descricao)
 VALUES
   ('Informática'),
