@@ -22,7 +22,6 @@ const authenticationToken = async (req, res, next) => {
       return res.status(404).json({ message: 'User not found.' });
     }
 
-    // Criando um novo objeto sem a senha
     const userDataSecured = { ...user };
     delete userDataSecured.senha;
 
