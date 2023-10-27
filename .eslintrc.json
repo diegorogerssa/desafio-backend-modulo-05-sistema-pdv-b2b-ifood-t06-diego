@@ -9,6 +9,10 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "no-throw-literal": "off"
+        "no-throw-literal": "off",
+        "linebreak-style": [
+            "error",
+            "windows"
+        ]
     }
 }
