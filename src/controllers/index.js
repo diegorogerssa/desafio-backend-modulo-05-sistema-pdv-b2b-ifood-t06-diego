@@ -4,10 +4,14 @@ const loginController = require('./user/loginController');
 const updateUserController = require('./user/updateUserController');
 const detailUserController = require('./user/detailUserController');
 
+const registerProductController = require('./product/registerProductController');
+
 module.exports = {
   registerController,
   loginController,
   updateUserController,
   listCategoryController,
   detailUserController,
+
+  registerProductController
 };
