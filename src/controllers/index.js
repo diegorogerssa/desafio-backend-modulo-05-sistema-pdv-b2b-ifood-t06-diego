@@ -3,6 +3,7 @@ const listCategoryController = require('./category/listCategoryController');
 const loginController = require('./user/loginController');
 const updateUserController = require('./user/updateUserController');
 const detailUserController = require('./user/detailUserController');
+const createClientController = require('./clients/createClientController');
 
 module.exports = {
   registerController,
@@ -10,4 +11,5 @@ module.exports = {
   updateUserController,
   listCategoryController,
   detailUserController,
+  createClientController,
 };
