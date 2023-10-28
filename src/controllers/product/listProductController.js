@@ -1,7 +1,7 @@
 const { listProductService } = require('../../services');
 
 const listProductController = async (req, res, next) => {
-  const category_id = req.query.category_id;
+  const category_id = req.query.categoria_id;
 
   try {
     const products = await listProductService(category_id);
