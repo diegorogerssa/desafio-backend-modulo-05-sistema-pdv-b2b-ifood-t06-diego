@@ -5,6 +5,7 @@ const updateUserController = require('./user/updateUserController');
 const detailUserController = require('./user/detailUserController');
 
 const registerProductController = require('./product/registerProductController');
+const updateProductController = require('./product/updateProductController');
 
 module.exports = {
   registerController,
@@ -13,5 +14,6 @@ module.exports = {
   listCategoryController,
   detailUserController,
 
-  registerProductController
+  registerProductController,
+  updateProductController
 };

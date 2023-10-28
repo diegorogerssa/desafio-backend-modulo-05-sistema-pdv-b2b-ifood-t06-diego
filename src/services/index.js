@@ -3,11 +3,13 @@ const loginService = require('./user/loginService');
 const updateUserService = require('./user/updateUserService');
 
 const registerProductService = require('./product/registerProductService');
+const updateProductService = require('./product/updateProductService');
 
 module.exports = {
   registerUserService,
   loginService,
   updateUserService,
 
-  registerProductService
+  registerProductService,
+  updateProductService
 };
