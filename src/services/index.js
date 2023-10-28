@@ -4,6 +4,7 @@ const updateUserService = require('./user/updateUserService');
 
 const registerProductService = require('./product/registerProductService');
 const updateProductService = require('./product/updateProductService');
+const listProductService = require('./product/listProductService');
 
 module.exports = {
   registerUserService,
@@ -11,5 +12,6 @@ module.exports = {
   updateUserService,
 
   registerProductService,
-  updateProductService
+  updateProductService,
+  listProductService
 };
