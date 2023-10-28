@@ -4,6 +4,7 @@ const updateUserModel = require('./user/updateUserModel');
 const getUserByIdModel = require('./user/getUserByIdModel');
 const listCategoryModel = require('./category/listCategoryModel');
 const createClientModel = require('./clients/createClientModel');
+const getClientByEmailModel = require('./clients/getClientByEmailModel');
 
 module.exports = {
   registerModel,
@@ -12,4 +13,5 @@ module.exports = {
   getUserByIdModel,
   listCategoryModel,
   createClientModel,
+  getClientByEmailModel,
 };
