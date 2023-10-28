@@ -1,4 +1,4 @@
-const createClientService = require('../../services');
+const { createClientService } = require('../../services');
 
 const createClientController = async (req, res, next) => {
   const clientData = req.body;

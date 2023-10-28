@@ -8,7 +8,7 @@ const schemaCreateClient = joi.object({
     'any.required': 'The email field is required',
     'string.email': 'Invalid email address. Please enter a valid email address',
   }),
-  cpf: joi.string().required().min(8).max(8)
+  cpf: joi.string().required().min(11).max(11)
     .messages({
       'any.required': 'The senha field is required',
     }),
