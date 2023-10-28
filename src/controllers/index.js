@@ -4,6 +4,7 @@ const loginController = require('./user/loginController');
 const updateUserController = require('./user/updateUserController');
 const detailUserController = require('./user/detailUserController');
 const createClientController = require('./clients/createClientController');
+const updateClientController = require('./clients/updateClientController');
 
 module.exports = {
   registerController,
@@ -12,4 +13,5 @@ module.exports = {
   listCategoryController,
   detailUserController,
   createClientController,
+  updateClientController,
 };
