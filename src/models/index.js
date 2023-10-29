@@ -11,6 +11,7 @@ const updateProductModel = require('./product/updateProductModel');
 const getProductByIDModel = require('./product/getProductByIDModel');
 const listProductModel = require('./product/listProductModel');
 const listProductByCategoryModel = require('./product/listProductByCategoryModel');
+const detailProductModel = require('./product/detailProductModel');
 
 module.exports = {
   registerModel,
@@ -25,5 +26,6 @@ module.exports = {
   updateProductModel,
   getProductByIDModel,
   listProductModel,
-  listProductByCategoryModel
+  listProductByCategoryModel,
+  detailProductModel,
 };
