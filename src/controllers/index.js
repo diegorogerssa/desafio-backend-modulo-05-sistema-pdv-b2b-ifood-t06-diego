@@ -9,6 +9,7 @@ const updateClientController = require('./clients/updateClientController');
 const registerProductController = require('./product/registerProductController');
 const updateProductController = require('./product/updateProductController');
 const listProductController = require('./product/listProductController');
+const deleteProductController = require('./product/deleteProductController');
 
 module.exports = {
   registerController,
@@ -20,5 +21,6 @@ module.exports = {
   updateClientController,
   registerProductController,
   updateProductController,
-  listProductController
+  listProductController,
+  deleteProductController,
 };
