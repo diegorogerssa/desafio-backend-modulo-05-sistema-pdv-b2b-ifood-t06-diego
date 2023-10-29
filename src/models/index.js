@@ -8,6 +8,8 @@ const getCategoryByIDModel = require('./category/getCategoryByIDModel');
 
 const registerProductModel = require('./product/registerProductModel');
 
+const listClientsModel = require('./client/listClientsModel');
+
 module.exports = {
   registerModel,
   getUserByEmailModel,
@@ -17,5 +19,7 @@ module.exports = {
   listCategoryModel,
   getCategoryByIDModel,
 
-  registerProductModel
+  registerProductModel,
+
+  listClientsModel,
 };
