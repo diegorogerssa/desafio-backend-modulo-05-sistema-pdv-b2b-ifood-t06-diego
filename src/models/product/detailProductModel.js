@@ -8,13 +8,12 @@ const detailProductModel = async (productID) => {
       'p.quantidade_estoque',
       'p.valor',
       'p.categoria_id',
-      'c.descricao',
+      'c.descricao as categoria_descricao',
     )
     .from('produtos as p')
     .join('categorias as c', 'p.categoria_id', 'c.id')
     .where('p.id', productID)
     .first();
-  console.log(product);
   return product;
 };
 
