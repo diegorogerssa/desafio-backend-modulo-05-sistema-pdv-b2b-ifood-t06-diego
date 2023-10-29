@@ -4,6 +4,8 @@ const { schemaRegisterProduct } = require('../middlewares/schemas');
 
 const {
   registerProductController,
+  updateProductController,
+  listProductController
 } = require('../controllers');
 
 const product = express.Router();
@@ -14,12 +16,12 @@ product.post('/produto',
   registerProductController
 );
 
-// product.put('/produto',
-//   authenticationToken,
-//   validateData(schemaRegisterProduct),
-//   updateController
-// );
-//
-// product.get('/produto', authenticationToken, detailProductController);
+product.put('/produto/:id',
+  authenticationToken,
+  validateData(schemaRegisterProduct),
+  updateProductController
+);
+
+product.get('/produto', authenticationToken, listProductController);
 
 module.exports = product;
