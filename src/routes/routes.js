@@ -5,6 +5,7 @@ const login = require('./loginRoutes');
 const client = require('./clientRoutes');
 const product = require('./productRoutes');
 const { errorMiddleware } = require('../middlewares');
+
 const routes = express.Router();
 
 routes.use(user);
