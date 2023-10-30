@@ -16,6 +16,5 @@ module.exports = {
   updateClientService,
   registerProductService,
   updateProductService,
-  listProductService
-
+  listProductService,
 };
