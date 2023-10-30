@@ -7,6 +7,7 @@ const {
   updateProductController,
   listProductController,
   deleteProductController,
+  detailProductController,
 } = require('../controllers');
 
 const product = express.Router();
@@ -24,8 +25,8 @@ product.put(
   validateData(schemaRegisterProduct),
   updateProductController,
 );
-
 product.get('/produto', authenticationToken, listProductController);
+product.get('/produto/:id', authenticationToken, detailProductController);
 
 product.delete('/produto/:id', authenticationToken, deleteProductController);
 
