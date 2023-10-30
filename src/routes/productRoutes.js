@@ -6,6 +6,7 @@ const {
   registerProductController,
   updateProductController,
   listProductController,
+  deleteProductController,
   detailProductController,
 } = require('../controllers');
 
@@ -17,6 +18,7 @@ product.post(
   validateData(schemaRegisterProduct),
   registerProductController,
 );
+
 product.put(
   '/produto/:id',
   authenticationToken,
@@ -25,5 +27,7 @@ product.put(
 );
 product.get('/produto', authenticationToken, listProductController);
 product.get('/produto/:id', authenticationToken, detailProductController);
+
+product.delete('/produto/:id', authenticationToken, deleteProductController);
 
 module.exports = product;
