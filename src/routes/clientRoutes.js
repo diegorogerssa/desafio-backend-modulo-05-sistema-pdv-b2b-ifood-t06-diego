@@ -7,8 +7,8 @@ const { listClientsController } = require('../controllers');
 
 const client = express.Router();
 
-client.post('/clientes', authenticationToken, validateData(schemaCreateClient), createClientController);
-client.put('/clientes/:id', authenticationToken, validateData(schemaUpdateClient), updateClientController);
+client.post('/cliente', authenticationToken, validateData(schemaCreateClient), createClientController);
+client.put('/cliente/:id', authenticationToken, validateData(schemaUpdateClient), updateClientController);
 client.get('/cliente', authenticationToken, listClientsController);
 
 module.exports = client;
