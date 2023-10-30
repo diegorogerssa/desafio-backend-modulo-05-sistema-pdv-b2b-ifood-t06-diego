@@ -1,7 +1,7 @@
-const { getUserByIdModel } = require('../../models');
+const { getClientByIdModel } = require('../../models');
 
-const detailClientService = async (id) => {
-  const clientExists = await getUserByIdModel(id);
+const detailClientService = async (clientId) => {
+  const clientExists = await getClientByIdModel(clientId);
 
   if (!clientExists) {
     throw {

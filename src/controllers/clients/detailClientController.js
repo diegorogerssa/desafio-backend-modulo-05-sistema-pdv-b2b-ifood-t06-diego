@@ -1,8 +1,8 @@
 const { detailClientService } = require('../../services');
 
 const detailClientController = async (req, res, next) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     const detailClient = await detailClientService(id);
 
     return res.status(200).json(detailClient);
