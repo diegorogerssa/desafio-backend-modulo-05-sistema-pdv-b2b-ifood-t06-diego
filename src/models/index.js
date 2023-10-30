@@ -15,6 +15,7 @@ const updateProductModel = require('./product/updateProductModel');
 const getProductByIDModel = require('./product/getProductByIDModel');
 const listProductModel = require('./product/listProductModel');
 const listProductByCategoryModel = require('./product/listProductByCategoryModel');
+const detailProductModel = require('./product/detailProductModel');
 const listClientsModel = require('./clients/listClientsModel');
 
 module.exports = {
@@ -34,5 +35,6 @@ module.exports = {
   getProductByIDModel,
   listProductModel,
   listProductByCategoryModel,
+  detailProductModel,
   listClientsModel,
 };

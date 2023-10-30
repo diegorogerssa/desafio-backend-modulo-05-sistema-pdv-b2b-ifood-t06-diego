@@ -7,6 +7,7 @@ const updateClientService = require('./clients/updateClientService');
 const registerProductService = require('./product/registerProductService');
 const updateProductService = require('./product/updateProductService');
 const listProductService = require('./product/listProductService');
+const detailProductService = require('./product/detailProductService');
 
 module.exports = {
   registerUserService,
@@ -17,4 +18,5 @@ module.exports = {
   registerProductService,
   updateProductService,
   listProductService,
+  detailProductService,
 };
