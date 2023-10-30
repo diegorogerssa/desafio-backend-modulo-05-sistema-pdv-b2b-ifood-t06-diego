@@ -2,20 +2,21 @@ const registerModel = require('./user/registerModel');
 const getUserByEmailModel = require('./user/getUserByEmailModel');
 const updateUserModel = require('./user/updateUserModel');
 const getUserByIdModel = require('./user/getUserByIdModel');
-
 const listCategoryModel = require('./category/listCategoryModel');
+const getCategoryByIDModel = require('./category/getCategoryByIDModel');
 const createClientModel = require('./clients/createClientModel');
 const getClientByEmailModel = require('./clients/getClientByEmailModel');
 const getClientByIdModel = require('./clients/getClientByIdModel');
 const updateClientModel = require('./clients/updateClientModel');
 const getClientByCpfModel = require('./clients/getClientByCpfModel');
-const getCategoryByIDModel = require('./category/getCategoryByIDModel');
 const registerProductModel = require('./product/registerProductModel');
 const updateProductModel = require('./product/updateProductModel');
 const getProductByIDModel = require('./product/getProductByIDModel');
 const listProductModel = require('./product/listProductModel');
 const listProductByCategoryModel = require('./product/listProductByCategoryModel');
-
+const deleteProductModel = require('./product/deleteProductModel');
+const detailProductModel = require('./product/detailProductModel');
+const listClientsModel = require('./clients/listClientsModel');
 
 module.exports = {
   registerModel,
@@ -33,6 +34,8 @@ module.exports = {
   updateProductModel,
   getProductByIDModel,
   listProductModel,
-  listProductByCategoryModel
-
+  listProductByCategoryModel,
+  deleteProductModel,
+  detailProductModel,
+  listClientsModel,
 };
