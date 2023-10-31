@@ -40,6 +40,6 @@ VALUES
   numero VARCHAR(50),
   bairro VARCHAR(150),
   cidade VARCHAR(150),
-  estado VARCHAR(3)
+  estado VARCHAR(2)
 );
 

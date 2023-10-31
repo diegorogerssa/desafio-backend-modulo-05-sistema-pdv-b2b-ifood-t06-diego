@@ -1,8 +1,8 @@
 const knex = require('../../database/knex');
 
-const getUserByIdModel = async (id) => {
+const getClientByIdModel = async (id) => {
   const user = await knex.select('*').from('clientes').where('id', id).first();
   return user;
 };
 
-module.exports = getUserByIdModel;
+module.exports = getClientByIdModel;
