@@ -28,31 +28,68 @@ const schemaUpdateClient = joi.object({
   cep: joi
     .string()
     .regex(/[0-9]+$/)
-    .allow('')
     .min(8)
     .max(8)
     .trim()
     .default(null)
     .messages({
-      'any.required': 'The cep field is required',
       'string.min': 'Cep must be 8 characters.',
       'string.max': 'Cep must be 8 characters.',
+      'string.empty': 'The cpf cannot be empty.',
+      'string.base': 'Cep must be a string',
     }),
-  rua: joi.string().allow('').min(2).trim().default(null).messages({
-    'any.required': 'The rua field is required',
-  }),
-  numero: joi.string().allow('').min(1).trim().default(null).messages({
-    'any.required': 'The numero field is required',
-  }),
-  bairro: joi.string().allow('').trim().min(2).default(null).messages({
-    'any.required': 'The bairro field is required',
-  }),
-  cidade: joi.string().allow('').trim().min(2).default(null).messages({
-    'any.required': 'The cidade field is required',
-  }),
-  estado: joi.string().allow('').min(2).max(2).trim().default(null).messages({
-    'any.required': 'The numero field is required',
-  }),
+  rua: joi
+    .string()
+    .min(2)
+    .trim()
+    .default(null)
+    .messages({
+      'string.empty': 'The street cannot be empty.',
+      'string.base': 'Street must be a string',
+    }),
+  numero: joi
+    .string()
+    .min(1)
+    .trim()
+    .default(null)
+    .messages({
+      'string.empty': 'The number cannot be empty.',
+      'string.base': 'Number must be a string',
+    }),
+  bairro: joi
+    .string()
+    .trim()
+    .min(2)
+    .default(null)
+    .messages({
+      'string.empty': 'The neighborhood cannot be empty.',
+      'string.base': 'Neighborhood must be a string',
+      'string.min': 'Neighborhood length must be at least 2 characters long',
+    }),
+  cidade: joi
+    .string()
+    .trim()
+    .min(2)
+    .default(null)
+    .messages({
+      'string.empty': 'The city cannot be empty.',
+      'string.base': 'City must be a string',
+      'string.min': 'City must be at least 2 characters.',
+    }),
+  estado: joi
+    .string()
+    .regex(/^[a-z + A-Z]+$/)
+    .min(2)
+    .max(2)
+    .trim()
+    .default(null)
+    .messages({
+      'string.empty': 'The state cannot be empty.',
+      'string.base': 'State must be a string',
+      'string.min': 'State must be 2 characters.',
+      'string.max': 'State must be 2 characters.',
+      'string.pattern.base': 'State cannot contains numbers',
+    }),
 });
 
 module.exports = schemaUpdateClient;

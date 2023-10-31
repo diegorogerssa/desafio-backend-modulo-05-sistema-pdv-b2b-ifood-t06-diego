@@ -35,7 +35,7 @@ VALUES
   nome VARCHAR(150) NOT NULL,
   email VARCHAR(150) NOT NULL UNIQUE,
   cpf CHAR(11) NOT NULL UNIQUE,
-  cep char(8),
+  cep CHAR(8),
   rua VARCHAR(150),
   numero VARCHAR(50),
   bairro VARCHAR(150),
