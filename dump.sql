@@ -1,3 +1,4 @@
+-- Active: 1693835880795@@127.0.0.1@5432@pdv
 CREATE TABLE usuarios(
   id SERIAL PRIMARY KEY,
   nome VARCHAR(150) NOT NULL,
@@ -45,7 +46,7 @@ CREATE TABLE produtos(
 
 CREATE TABLE pedidos(
   id SERIAL PRIMARY KEY,
-  client_id INTEGER,
+  cliente_id INTEGER,
   observacao TEXT,
   valor_total INTEGER 
 );
