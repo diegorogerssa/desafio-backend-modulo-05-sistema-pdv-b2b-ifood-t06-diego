@@ -18,6 +18,7 @@ const registerOrderModel = async (clientId, observation, total, product) => {
       quantidade_produto: productOrder.quantidade_produto,
       valor_produto: productOrder.valor,
     }));
+
     const pedido_produtos = await transaction('pedido_produtos').insert(newProductOrder).returning('*');
 
     await transaction.commit();
