@@ -5,6 +5,7 @@ const {
 } = require('../../models');
 const compilerHtml = require('../../email/compiler/compilerHtml');
 const transporter = require('../../email/config/nodeMailer');
+const { centsToReal } = require('../../utils');
 
 const registerOrderService = async (order) => {
   const { clientId, observation, orderProducts } = order;
@@ -46,16 +47,21 @@ const registerOrderService = async (order) => {
 
   const newOrder = await registerOrderModel(clientId, observation, total, products);
 
+  const modifiedDataForEmail = [...products].map((item) => ({
+    ...item,
+    valor: centsToReal(item.valor),
+  }));
+
   const html = await compilerHtml('./src/email/templates/orderProducts.html', {
     orderId: newOrder.pedido.id,
-    totalOrder: newOrder.pedido.valor_total,
+    totalOrder: centsToReal(newOrder.pedido.valor_total),
     orderDescription: newOrder.pedido.observacao || 'sem observação',
-    orderProducts: products,
+    orderProducts: modifiedDataForEmail,
 
   });
   const message = {
     from: `${process.env.EMAIL_SEND} <${process.env.EMAIL_SEND}>`,
-    to: '8bit@email.com',
+    to: '8bit@cubosacademy.com',
     subject: 'Pedido de produto',
     html,
   };
