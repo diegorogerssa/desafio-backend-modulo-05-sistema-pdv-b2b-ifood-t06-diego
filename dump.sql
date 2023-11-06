@@ -58,11 +58,10 @@ CREATE TABLE pedido_produtos(
   produto_id INTEGER,
   quantidade_produto INTEGER,
   valor_produto INTEGER,
-  FOREIGN KEY(pedido_id) REFERENCES pedidos(id) 
+  FOREIGN KEY(pedido_id) REFERENCES pedidos(id), 
   FOREIGN KEY(produto_id) REFERENCES produtos(id) 
 );
 
---Como essa tabela já está em progresso, manterei a alteração de tabela aqui
 ALTER TABLE produtos
 ADD CONSTRAINT fk_categoria 
 FOREIGN KEY (categoria_id) REFERENCES categorias(id);
