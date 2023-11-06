@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Seu pedido #{{"orderId"}}</h1>
+
+        <p>Olá,</p>
+
+        <p>Você efetuou um pedido com sucesso. Abaixo estão os detalhes do seu pedido:</p>
+
+        <ul>
+            <!-- Iteração sobre os produtos do pedido -->
+            {{#each orderProducts}}
+                <li>
+                    Produto: {{descricao}},
+                    Quantidade: {{quantidade_produto}},
+                    Valor: R$ {{valor}}
+                </li>
+            {{/each}}
+        </ul>
+
+        <p>Valor Total: R$ {{totalOrder}}</p>
+
+        <p>Uma observação sobre o pedido: {{orderDescription}}</p>
+
+        <p>Se você não solicitou este pedido, por favor, entre em contato conosco imediatamente.</p>
+
+        <p>Atenciosamente,<br>Equipe de suporte</p>
+    </div>
+</body>
+
+</html>
