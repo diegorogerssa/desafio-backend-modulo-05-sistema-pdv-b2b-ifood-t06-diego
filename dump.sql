@@ -48,7 +48,8 @@ CREATE TABLE pedidos(
   id SERIAL PRIMARY KEY,
   cliente_id INTEGER,
   observacao TEXT,
-  valor_total INTEGER 
+  valor_total INTEGER,
+  FOREIGN KEY(cliente_id) REFERENCES clientes(id) 
 );
 
 CREATE TABLE pedido_produtos(
@@ -56,21 +57,12 @@ CREATE TABLE pedido_produtos(
   pedido_id INTEGER,
   produto_id INTEGER,
   quantidade_produto INTEGER,
-  valor_produto INTEGER
+  valor_produto INTEGER,
+  FOREIGN KEY(pedido_id) REFERENCES pedidos(id) 
+  FOREIGN KEY(produto_id) REFERENCES produtos(id) 
 );
 
+--Como essa tabela já está em progresso, manterei a alteração de tabela aqui
 ALTER TABLE produtos
 ADD CONSTRAINT fk_categoria 
 FOREIGN KEY (categoria_id) REFERENCES categorias(id);
-
-ALTER TABLE pedidos
-ADD CONSTRAINT fk_cliente 
-FOREIGN KEY (cliente_id) REFERENCES clientes(id);
-
-ALTER TABLE pedido_produtos
-ADD CONSTRAINT fk_pedido 
-FOREIGN KEY (pedido_id) REFERENCES pedidos(id);
-
-ALTER TABLE pedido_produtos
-ADD CONSTRAINT fk_produto 
-FOREIGN KEY (produto_id) REFERENCES produtos(id);
