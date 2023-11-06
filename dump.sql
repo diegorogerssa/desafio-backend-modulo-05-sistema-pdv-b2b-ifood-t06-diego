@@ -65,7 +65,7 @@ FOREIGN KEY (categoria_id) REFERENCES categorias(id);
 
 ALTER TABLE pedidos
 ADD CONSTRAINT fk_cliente 
-FOREIGN KEY (client_id) REFERENCES clientes(id);
+FOREIGN KEY (cliente_id) REFERENCES clientes(id);
 
 ALTER TABLE pedido_produtos
 ADD CONSTRAINT fk_pedido 
