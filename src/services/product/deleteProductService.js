@@ -1,4 +1,4 @@
-const { deleteProductModel, getProductByIDModel } = require('../../models');
+const { deleteProductModel, getProductByIDModel, productLinkedModel } = require('../../models');
 
 const deleteProductService = async (productId) => {
   const product = await getProductByIDModel(productId);
@@ -6,6 +6,14 @@ const deleteProductService = async (productId) => {
     throw {
       statusCode: 404,
       message: 'Product not found.',
+    };
+  }
+
+  const productBeingUsed = await productLinkedModel(productId);
+  if (productBeingUsed) {
+    throw {
+      statusCode: 400,
+      message: 'Products linked to active orders cannot be deleted.'
     };
   }
 
