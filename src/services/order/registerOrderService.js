@@ -60,8 +60,8 @@ const registerOrderService = async (order) => {
 
   });
   const message = {
-    from: `${process.env.EMAIL_SEND} <${process.env.EMAIL_SEND}>`,
-    to: '8bit@cubosacademy.com',
+    from: `${process.env.EMAIL_SENDER} <${process.env.EMAIL_SENDER}>`,
+    to: `${client.email}`,
     subject: 'Pedido de produto',
     html,
   };
