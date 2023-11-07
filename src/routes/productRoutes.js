@@ -10,12 +10,15 @@ const {
   detailProductController,
 } = require('../controllers');
 
+const multer = require("../multer")
+
 const product = express.Router();
 
 product.post(
   '/produto',
   authenticationToken,
   validateData(schemaRegisterProduct),
+  multer.single('produto_imagem'),
   registerProductController,
 );
 
