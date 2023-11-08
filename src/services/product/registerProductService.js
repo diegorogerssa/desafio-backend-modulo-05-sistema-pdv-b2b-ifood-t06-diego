@@ -1,10 +1,6 @@
 const { registerProductModel, getCategoryByIDModel} = require('../../models');
-const aws = require('../../aws')
-const dotenv = require('dotenv')
 
-dotenv.config()
-
-const registerProductService = async (productData, produto_imagem) => {
+const registerProductService = async (productData, productImage) => {
   const { categoria_id } = productData;
 
   const categoryExists = await getCategoryByIDModel(categoria_id);
@@ -16,7 +12,7 @@ const registerProductService = async (productData, produto_imagem) => {
     };
   }
 
-  const [registeredData] = await registerProductModel(productData, produto_imagem);
+  const [registeredData] = await registerProductModel(productData, productImage);
 
   return registeredData;
 };

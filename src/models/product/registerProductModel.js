@@ -1,10 +1,7 @@
 const knex = require('../../database/knex');
-const aws = require('../../aws')
-const dotenv = require('dotenv')
+const uploadImages = require('../../utils/uploadImages')
 
-dotenv.config()
-
-const registerProductModel = async (productData, produto_imagem) => {
+const registerProductModel = async (productData, productImage) => {
   const {
     descricao,
     quantidade_estoque,
@@ -12,19 +9,7 @@ const registerProductModel = async (productData, produto_imagem) => {
     categoria_id,
   } = productData;
 
-  const arquivo = await aws.upload({
-    Bucket: process.env.BUCKET_NAME,
-    Key: `imagens/${req.file.originalname}`,
-    Body: req.file.buffer,
-    ContentType: req.file.mimetype
-  }).promise()
-
-  const img = {
-    url:arquivo.Location,
-    path: arquivo.Key
-  }
-
-  console.log(img.url)
+  const url = await uploadImages(productImage)
 
   const product = await knex('produtos')
     .insert({
@@ -32,7 +17,7 @@ const registerProductModel = async (productData, produto_imagem) => {
       quantidade_estoque,
       valor,
       categoria_id,
-      produto_imagem: img.url
+      produto_imagem: url
     })
     .returning([
       'id',

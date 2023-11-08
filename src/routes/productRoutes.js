@@ -17,7 +17,7 @@ const product = express.Router();
 product.post(
   '/produto',
   authenticationToken,
-  validateData(schemaRegisterProduct),
+  // validateData(schemaRegisterProduct),
   multer.single('produto_imagem'),
   registerProductController,
 );

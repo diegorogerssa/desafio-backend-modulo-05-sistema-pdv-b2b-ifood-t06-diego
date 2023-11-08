@@ -2,10 +2,10 @@ const { registerProductService } = require('../../services');
 
 const registerProductController = async (req, res, next) => {
   const productData = req.body;
-  const {produto_imagem} = req.file
+  const productImage = req.file
 
   try {
-    const registeredData = await registerProductService(productData, produto_imagem);
+    const registeredData = await registerProductService(productData, productImage);
     return res.status(201).json(registeredData);
   } catch (error) {
     return next(error);
