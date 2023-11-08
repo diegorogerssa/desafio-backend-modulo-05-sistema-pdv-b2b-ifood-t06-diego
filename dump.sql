@@ -29,7 +29,8 @@ CREATE TABLE produtos(
   quantidade_estoque INTEGER NOT NULL,
   valor INTEGER NOT NULL,
   categoria_id INTEGER NOT NULL,
-  produto_imagem TEXT
+  produto_imagem TEXT,
+  FOREIGN KEY (categoria_id) REFERENCES categorias(id)
 );
   CREATE TABLE clientes(
   id SERIAL PRIMARY KEY,
@@ -62,6 +63,4 @@ CREATE TABLE pedido_produtos(
   FOREIGN KEY(produto_id) REFERENCES produtos(id) 
 );
 
-ALTER TABLE produtos
-ADD CONSTRAINT fk_categoria 
-FOREIGN KEY (categoria_id) REFERENCES categorias(id);
+
