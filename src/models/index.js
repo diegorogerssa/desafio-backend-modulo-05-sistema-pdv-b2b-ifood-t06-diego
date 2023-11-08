@@ -42,6 +42,6 @@ module.exports = {
   detailProductModel,
   listClientsModel,
   registerOrderModel,
-  listOrderModel
-  productLinkedModel,
+  listOrderModel,
+  productLinkedModel
 };
