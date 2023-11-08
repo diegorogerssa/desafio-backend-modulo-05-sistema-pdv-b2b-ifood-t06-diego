@@ -19,7 +19,6 @@ const detailProductModel = require('./product/detailProductModel');
 const listClientsModel = require('./clients/listClientsModel');
 const registerOrderModel = require('./order/registerOrderModel');
 const listOrderModel = require('./order/listOrderModel');
-const listOrderByClientModel = require('./order/listOrderByClientModel');
 
 module.exports = {
   registerModel,
@@ -42,6 +41,5 @@ module.exports = {
   detailProductModel,
   listClientsModel,
   registerOrderModel,
-  listOrderByClientModel,
   listOrderModel
 };

@@ -1,6 +1,5 @@
 const {
   listOrderModel,
-  listOrderByClientModel,
   getClientByIdModel
 } = require('../../models');
 
@@ -15,11 +14,9 @@ const listOrderService = async (clientId) => {
         message: 'Client not found',
       };
     }
-
-    orders = await listOrderByClientModel(clientId);
-  } else {
-    orders = await listOrderModel();
   }
+
+  orders = await listOrderModel(clientId);
 
   return orders;
 };
