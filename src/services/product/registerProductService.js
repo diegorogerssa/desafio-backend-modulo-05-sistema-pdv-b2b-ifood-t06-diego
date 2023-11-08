@@ -1,6 +1,6 @@
 const { registerProductModel, getCategoryByIDModel} = require('../../models');
 
-const registerProductService = async (productData) => {
+const registerProductService = async (productData, productImage) => {
   const { categoria_id } = productData;
 
   const categoryExists = await getCategoryByIDModel(categoria_id);
@@ -12,7 +12,7 @@ const registerProductService = async (productData) => {
     };
   }
 
-  const [registeredData] = await registerProductModel(productData);
+  const [registeredData] = await registerProductModel(productData, productImage);
 
   return registeredData;
 };
