@@ -1,6 +1,7 @@
 const knex = require('../../database/knex');
+const uploadImages = require('../../utils/uploadImages')
 
-const updateProductModel = async (productData) => {
+const updateProductModel = async (productData, productImage, defaultImage) => {
   const {
     id,
     descricao,
@@ -9,12 +10,24 @@ const updateProductModel = async (productData) => {
     categoria_id
   } = productData;
 
+  let url
+
+  if(productImage){
+    const imgUrl = await uploadImages(productImage)
+    url = imgUrl
+  }
+
+  if(!productImage){
+    url = defaultImage
+  }
+
   await knex('produtos')
     .update({
       descricao,
       quantidade_estoque,
       valor,
-      categoria_id
+      categoria_id,
+      produto_imagem: url
     })
     .where('id', id);
 };

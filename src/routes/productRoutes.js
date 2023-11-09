@@ -25,6 +25,7 @@ product.post(
 product.put(
   '/produto/:id',
   authenticationToken,
+  multer.single('produto_imagem'),
   validateData(schemaRegisterProduct),
   updateProductController,
 );
