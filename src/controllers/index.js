@@ -31,5 +31,5 @@ module.exports = {
   detailProductController,
   detailClientController,
   registerOrderController,
-  listOrderController
+  listOrderController,
 };

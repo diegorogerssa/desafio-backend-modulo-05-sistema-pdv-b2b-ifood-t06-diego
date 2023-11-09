@@ -10,7 +10,7 @@ const {
   detailProductController,
 } = require('../controllers');
 
-const multer = require('../multer')
+const multer = require('../config/multer/multer');
 
 const product = express.Router();
 

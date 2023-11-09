@@ -6,7 +6,7 @@ const detailProductController = async (req, res, next) => {
     const detailProduct = await detailProductService(id);
     return res.status(200).json(detailProduct);
   } catch (error) {
-    return next(error)
+    return next(error);
   }
 };
 

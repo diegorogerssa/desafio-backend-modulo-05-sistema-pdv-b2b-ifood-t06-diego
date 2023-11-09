@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable camelcase */
-const knex = require('../../database/knex');
+const knex = require('../../config/database/knex');
 const updateProductModel = require('../product/updateProductModel');
 
 const registerOrderModel = async (clientId, observation, total, product) => {

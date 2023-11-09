@@ -1,7 +1,8 @@
+/* eslint-disable camelcase */
 const {
   updateProductModel,
   getProductByIDModel,
-  getCategoryByIDModel
+  getCategoryByIDModel,
 } = require('../../models');
 
 const registerProductService = async (productData) => {

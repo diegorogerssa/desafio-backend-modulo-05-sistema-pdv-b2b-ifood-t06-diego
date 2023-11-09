@@ -1,4 +1,5 @@
-const knex = require('../../database/knex');
+/* eslint-disable camelcase */
+const knex = require('../../config/database/knex');
 
 const updateProductModel = async (productData) => {
   const {
@@ -6,7 +7,7 @@ const updateProductModel = async (productData) => {
     descricao,
     quantidade_estoque,
     valor,
-    categoria_id
+    categoria_id,
   } = productData;
 
   await knex('produtos')
@@ -14,7 +15,7 @@ const updateProductModel = async (productData) => {
       descricao,
       quantidade_estoque,
       valor,
-      categoria_id
+      categoria_id,
     })
     .where('id', id);
 };
