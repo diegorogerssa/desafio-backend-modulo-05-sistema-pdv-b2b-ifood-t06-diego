@@ -5,7 +5,7 @@ const {
   getCategoryByIDModel,
 } = require('../../models');
 
-const registerProductService = async (productData) => {
+const registerProductService = async (productData, productImage) => {
   const { categoria_id } = productData;
   const { id } = productData;
 
@@ -25,7 +25,9 @@ const registerProductService = async (productData) => {
     };
   }
 
-  await updateProductModel(productData);
+  const defaultImage = productExists.produto_imagem
+
+  await updateProductModel(productData, productImage, defaultImage);
 };
 
 module.exports = registerProductService;
