@@ -10,11 +10,14 @@ const {
   detailProductController,
 } = require('../controllers');
 
+const multer = require('../config/multer/multer');
+
 const product = express.Router();
 
 product.post(
   '/produto',
   authenticationToken,
+  multer.single('produto_imagem'),
   validateData(schemaRegisterProduct),
   registerProductController,
 );
@@ -22,6 +25,7 @@ product.post(
 product.put(
   '/produto/:id',
   authenticationToken,
+  multer.single('produto_imagem'),
   validateData(schemaRegisterProduct),
   updateProductController,
 );

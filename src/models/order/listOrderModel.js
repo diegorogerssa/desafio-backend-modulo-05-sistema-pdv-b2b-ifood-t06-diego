@@ -1,4 +1,5 @@
-const knex = require('../../database/knex');
+/* eslint-disable camelcase */
+const knex = require('../../config/database/knex');
 
 const listOrderModel = async (clientId) => {
   let idOrders;
@@ -31,10 +32,10 @@ const listOrderModel = async (clientId) => {
         pedido,
         pedido_produtos,
       };
-    })
+    }),
   );
 
   return listOrder;
-}
+};
 
 module.exports = listOrderModel;
