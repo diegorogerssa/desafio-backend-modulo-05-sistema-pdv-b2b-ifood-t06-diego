@@ -21,7 +21,18 @@ const listProductService = async (category_id) => {
     products = await listProductModel();
   }
 
-  products = await addCategoryDescription(products)
+  const addCategoryDescription = async (products) => {
+    for (const product of products) {
+      const categoria_id = product.categoria_id
+      const { descricao } = await getCategoryByIDModel(categoria_id)
+      
+      product.categoria_descricao = descricao;
+    }
+
+    products = await addCategoryDescription(products);
+
+    return products;
+  };
 
   return products;
 };

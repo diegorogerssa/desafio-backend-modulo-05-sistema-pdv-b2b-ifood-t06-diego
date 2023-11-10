@@ -1,5 +1,6 @@
-const knex = require('../../database/knex');
-const uploadImages = require('../../utils/uploadImages')
+/* eslint-disable camelcase */
+const knex = require('../../config/database/knex');
+const { uploadImages } = require('../../utils');
 
 const updateProductModel = async (productData, productImage, defaultImage) => {
   const {
