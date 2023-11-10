@@ -25,5 +25,5 @@ module.exports = {
   detailProductService,
   detailClientService,
   registerOrderService,
-  listOrderService
+  listOrderService,
 };

@@ -1,11 +1,9 @@
 const {
   listOrderModel,
-  getClientByIdModel
+  getClientByIdModel,
 } = require('../../models');
 
 const listOrderService = async (clientId) => {
-  let orders;
-
   if (clientId) {
     const clientExists = await getClientByIdModel(clientId);
     if (!clientExists) {
@@ -16,7 +14,7 @@ const listOrderService = async (clientId) => {
     }
   }
 
-  orders = await listOrderModel(clientId);
+  const orders = await listOrderModel(clientId);
 
   return orders;
 };

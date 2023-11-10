@@ -13,7 +13,7 @@ const deleteProductService = async (productId) => {
   if (productBeingUsed) {
     throw {
       statusCode: 400,
-      message: 'Products linked to active orders cannot be deleted.'
+      message: 'Products linked to active orders cannot be deleted.',
     };
   }
 

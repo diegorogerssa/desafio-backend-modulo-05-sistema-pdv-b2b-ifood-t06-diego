@@ -1,4 +1,5 @@
-const knex = require('../../database/knex');
+/* eslint-disable camelcase */
+const knex = require('../../config/database/knex');
 
 const listProductCategoryModel = async (category_id) => {
   const products = await knex.select('*')
