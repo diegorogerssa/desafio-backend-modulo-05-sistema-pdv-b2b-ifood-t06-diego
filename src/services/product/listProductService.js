@@ -1,7 +1,8 @@
+/* eslint-disable camelcase */
 const {
   listProductModel,
   listProductByCategoryModel,
-  getCategoryByIDModel
+  getCategoryByIDModel,
 } = require('../../models');
 
 const listProductService = async (category_id) => {
@@ -36,16 +37,5 @@ const listProductService = async (category_id) => {
 
   return products;
 };
-
-const addCategoryDescription = async (products) => {
-  for (const product of products) {
-    const categoria_id = product.categoria_id
-    const { descricao } = await getCategoryByIDModel(categoria_id)
-
-    product.categoria_descricao = descricao;
-  }
-
-  return products;
-}
 
 module.exports = listProductService;

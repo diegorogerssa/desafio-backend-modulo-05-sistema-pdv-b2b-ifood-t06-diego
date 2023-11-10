@@ -43,5 +43,5 @@ module.exports = {
   listClientsModel,
   registerOrderModel,
   listOrderModel,
-  productLinkedModel
+  productLinkedModel,
 };

@@ -1,4 +1,5 @@
-const { registerProductModel, getCategoryByIDModel} = require('../../models');
+/* eslint-disable camelcase */
+const { registerProductModel, getCategoryByIDModel } = require('../../models');
 
 const registerProductService = async (productData, productImage) => {
   const { categoria_id } = productData;

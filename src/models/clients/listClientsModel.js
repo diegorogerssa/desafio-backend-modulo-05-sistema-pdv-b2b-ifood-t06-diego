@@ -1,4 +1,4 @@
-const knex = require('../../database/knex');
+const knex = require('../../config/database/knex');
 
 const listClientsModel = async () => {
   const clients = await knex.select('*').from('clientes');

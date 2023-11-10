@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const { listProductService } = require('../../services');
 
 const listProductController = async (req, res, next) => {

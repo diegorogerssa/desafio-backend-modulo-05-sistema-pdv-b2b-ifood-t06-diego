@@ -10,7 +10,7 @@ const registerProductModel = async (productData, productImage) => {
     categoria_id,
   } = productData;
 
-  const url = await uploadImages(productImage)
+  const url = await uploadImages(productImage);
 
   const product = await knex('produtos')
     .insert({
@@ -18,7 +18,7 @@ const registerProductModel = async (productData, productImage) => {
       quantidade_estoque,
       valor,
       categoria_id,
-      produto_imagem: url
+      produto_imagem: url,
     })
     .returning([
       'id',
@@ -26,7 +26,7 @@ const registerProductModel = async (productData, productImage) => {
       'quantidade_estoque',
       'valor',
       'categoria_id',
-      'produto_imagem'
+      'produto_imagem',
     ]);
 
   return product;
