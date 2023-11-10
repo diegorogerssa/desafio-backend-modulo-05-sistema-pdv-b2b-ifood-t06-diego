@@ -16,9 +16,7 @@ const updateProductModel = async (productData, productImage, defaultImage) => {
   if (productImage) {
     const imgUrl = await uploadImages(productImage);
     url = imgUrl;
-  }
-
-  if (!productImage) {
+  } else {
     url = defaultImage;
   }
 

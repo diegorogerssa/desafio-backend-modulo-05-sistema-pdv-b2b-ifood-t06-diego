@@ -1,6 +1,6 @@
 const path = require('path');
 const knex = require('../../config/database/knex');
-const deleteImage = require('../../utils/uploads/deleteImage');
+const deleteImage = require('../../utils');
 
 const deleteProductModel = async (productId) => {
   const pathImage = await knex('produto_imagem')
