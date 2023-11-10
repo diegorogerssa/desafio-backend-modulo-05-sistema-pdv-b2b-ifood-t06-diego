@@ -1,5 +1,6 @@
-const knex = require('../../database/knex');
-const uploadImages = require('../../utils/uploadImages')
+/* eslint-disable camelcase */
+const knex = require('../../config/database/knex');
+const uploadImages = require('../../utils');
 
 const updateProductModel = async (productData, productImage, defaultImage) => {
   const {
@@ -7,18 +8,16 @@ const updateProductModel = async (productData, productImage, defaultImage) => {
     descricao,
     quantidade_estoque,
     valor,
-    categoria_id
+    categoria_id,
   } = productData;
 
-  let url
+  let url;
 
-  if(productImage){
-    const imgUrl = await uploadImages(productImage)
-    url = imgUrl
-  }
-
-  if(!productImage){
-    url = defaultImage
+  if (productImage) {
+    const imgUrl = await uploadImages(productImage);
+    url = imgUrl;
+  } else {
+    url = defaultImage;
   }
 
   await knex('produtos')
@@ -27,7 +26,7 @@ const updateProductModel = async (productData, productImage, defaultImage) => {
       quantidade_estoque,
       valor,
       categoria_id,
-      produto_imagem: url
+      produto_imagem: url,
     })
     .where('id', id);
 };

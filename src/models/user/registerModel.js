@@ -1,4 +1,4 @@
-const knex = require('../../database/knex');
+const knex = require('../../config/database/knex');
 
 const registerModel = async (userData) => {
   const { nome, email, encryptedPassword } = userData;
