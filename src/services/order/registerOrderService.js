@@ -1,4 +1,3 @@
-const path = require('path');
 const {
   registerOrderModel,
   getClientByIdModel,
@@ -53,9 +52,7 @@ const registerOrderService = async (order) => {
     valor: centsToReal(item.valor),
   }));
 
-  const templatePath = path.resolve(__dirname, '../../email/templates/orderProducts.html');
-
-  const html = await compilerHtml(templatePath, {
+  const html = await compilerHtml('./src/email/templates/orderProducts.html', {
     orderId: newOrder.pedido.id,
     totalOrder: centsToReal(newOrder.pedido.valor_total),
     orderDescription: newOrder.pedido.observacao || 'sem observação',
