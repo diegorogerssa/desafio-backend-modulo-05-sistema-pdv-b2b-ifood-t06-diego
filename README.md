@@ -1,4 +1,5 @@
 # desafio-backend-05-pdv
+
 ![](https://i.imgur.com/xG74tOh.png)
 
 # Desafio Módulo 5 - Backend
@@ -6,7 +7,6 @@
 Seja bem vindo(a) ao desafio do módulo 5.
 
 Sua tarefa como desenvolvedor(a) será criar uma API para um PDV (Frente de Caixa). Esse será um projeto piloto, ou seja, no futuro outras funcionalidades serão implementadas.
-
 
 **Importante 1: Sempre que a validação de uma requisição falhar, responda com código de erro e mensagem adequada à situação, ok?**
 
@@ -33,9 +33,9 @@ Você precisa criar um Banco de Dados PostgreSQL chamado `pdv`.
 
 ## **Requisitos obrigatórios**
 
--   A API a ser criada deverá acessar o banco de dados a ser criado `pdv` para persistir e manipular os dados de categorias, clientes, pedidos, produtos e usuários utilizados pela aplicação.
--   O campo id das tabelas no banco de dados deve ser auto incremento, chave primária e não deve permitir edição uma vez criado.
--   Qualquer valor monetário deverá ser representado em centavos (Ex.: R$ 10,00 reais = 1000)
+- A API a ser criada deverá acessar o banco de dados a ser criado `pdv` para persistir e manipular os dados de categorias, clientes, pedidos, produtos e usuários utilizados pela aplicação.
+- O campo id das tabelas no banco de dados deve ser auto incremento, chave primária e não deve permitir edição uma vez criado.
+- Qualquer valor monetário deverá ser representado em centavos (Ex.: R$ 10,00 reais = 1000)
 
 ## **Status Codes**
 
@@ -60,18 +60,18 @@ Abaixo, listamos os possíveis **_status codes_** esperados como resposta da API
 <summary><b>Banco de Dados</b></summary>
 <br>
 
-Crie as seguintes tabelas e colunas abaixo: 
+Crie as seguintes tabelas e colunas abaixo:
 
 **ATENÇÃO! Os nomes das tabelas e das colunas a serem criados devem seguir exatamente os nomes listados abaixo.**
 
--   usuarios
-    -   id
-    -   nome
-    -   email (campo único)
-    -   senha
--   categorias
-    -   id
-    -   descricao
+- usuarios
+  - id
+  - nome
+  - email (campo único)
+  - senha
+- categorias
+  - id
+  - descricao
 
 </details>
 
@@ -86,15 +86,15 @@ As categorias a seguir precisam ser previamente cadastradas para que sejam lista
 
 ## **Categorias**
 
--   Informática
--   Celulares
--   Beleza e Perfumaria
--   Mercado
--   Livros e Papelaria
--   Brinquedos
--   Moda
--   Bebê
--   Games
+- Informática
+- Celulares
+- Beleza e Perfumaria
+- Mercado
+- Livros e Papelaria
+- Brinquedos
+- Moda
+- Bebê
+- Games
 
 </details>
 
@@ -107,7 +107,7 @@ Essa é a rota que será utilizada para cadastrar um novo usuário no sistema.
 
 Critérios de aceite:
 
-    - Validar os campos obrigatórios: 
+    - Validar os campos obrigatórios:
         - nome
         - email
         - senha
@@ -154,7 +154,7 @@ Essa é a rota que permite o usuário logado atualizar informações de seu pró
 
 Critérios de aceite:
 
-    - Validar os campos obrigatórios: 
+    - Validar os campos obrigatórios:
         - nome
         - email
         - senha
@@ -183,27 +183,27 @@ Fazer deploy do projeto e disponibilizar a URL.
 <summary><b>Banco de Dados</b></summary>
 <br>
 
-Crie as seguintes tabelas e colunas abaixo: 
+Crie as seguintes tabelas e colunas abaixo:
 
 **ATENÇÃO! Os nomes das tabelas e das colunas a serem criados devem seguir exatamente os nomes listados abaixo.**
 
--   produtos
-    -   id
-    -   descricao
-    -   quantidade_estoque
-    -   valor
-    -   categoria_id
--   clientes
-    -   id
-    -   nome
-    -   email (campo único)
-    -   cpf (campo único) 
-    -   cep 
-    -   rua
-    -   numero
-    -   bairro
-    -   cidade
-    -   estado
+- produtos
+  - id
+  - descricao
+  - quantidade_estoque
+  - valor
+  - categoria_id
+- clientes
+  - id
+  - nome
+  - email (campo único)
+  - cpf (campo único)
+  - cep
+  - rua
+  - numero
+  - bairro
+  - cidade
+  - estado
 
 </details>
 
@@ -261,7 +261,7 @@ Deveremos incluir um parâmetro do tipo query **categoria_id** para que seja pos
 
 Critérios de aceite:
 
-    - Caso seja enviado o parâmetro do tipo query **categoria_id**, filtrar os produtos de acordo com a categoria, caso o id de categoria informada exista.
+    - Caso seja enviado o parâmetro do tipo query**categoria_id**, filtrar os produtos de acordo com a categoria, caso o id de categoria informada exista.
     - Caso não seja informado o parâmetro do tipo query **categoria_id** todos os produtos cadastrados deverão ser retornados.
 
 </details>
@@ -271,7 +271,7 @@ Critérios de aceite:
 
 #### `GET` `/produto/:id`
 
-Essa é a rota que permite o usuário logado obter um de seus produtos cadastrados.  
+Essa é a rota que permite o usuário logado obter um de seus produtos cadastrados.
 
 Critérios de aceite:
 
@@ -284,7 +284,7 @@ Critérios de aceite:
 
 #### `DELETE` `/produto/:id`
 
-Essa é a rota que será chamada quando o usuário logado quiser excluir um de seus produtos cadastrados.  
+Essa é a rota que será chamada quando o usuário logado quiser excluir um de seus produtos cadastrados.
 
 Critérios de aceite:
 
@@ -343,7 +343,7 @@ Essa é a rota que será chamada quando o usuário logado quiser listar todos os
 
 #### `GET` `/cliente/:id`
 
-Essa é a rota que será chamada quando o usuário logado quiser obter um de seus clientes cadastrados.  
+Essa é a rota que será chamada quando o usuário logado quiser obter um de seus clientes cadastrados.
 
 Critérios de aceite:
 
@@ -363,23 +363,24 @@ Critérios de aceite:
 <summary><b>Banco de Dados</b></summary>
 <br>
 
-Crie as seguintes tabelas e colunas abaixo: 
+Crie as seguintes tabelas e colunas abaixo:
 
 **ATENÇÃO! Os nomes das tabelas e das colunas a serem criados devem seguir exatamente os nomes listados abaixo.**
 
--   pedidos
-    -   id
-    -   cliente_id
-    -   observacao
-    -   valor_total
--   pedido_produtos
-    -   id
-    -   pedido_id
-    -   produto_id
-    -   quantidade_produto
-    -   valor_produto
--   produtos
-    -   produto_imagem
+- pedidos
+  - id
+  - cliente_id
+  - observacao
+  - valor_total
+- pedido_produtos
+  - id
+  - pedido_id
+  - produto_id
+  - quantidade_produto
+  - valor_produto
+- produtos
+  - produto_imagem
+
 </details>
 
 ---
@@ -428,8 +429,8 @@ Critérios de aceite:
     -   Validar se existe cliente para o id enviado no corpo (body) da requisição.
     -   Validar se existe produto para cada produto_id informado dentro do array enviado no corpo (body) da requisição.
     -   Validar se existe a quantidade em estoque de cada produto existente dentro do array, de acordo com a quantidade informada no corpo (body) da requisição.
-    -   O pedido deverá ser cadastrado, apenas, se todos os produtos estiverem validados. 
-    -   Enviar e-mail para o cliente notificando que o pedido foi efetuado com sucesso.   
+    -   O pedido deverá ser cadastrado, apenas, se todos os produtos estiverem validados.
+    -   Enviar e-mail para o cliente notificando que o pedido foi efetuado com sucesso.
 
 </details>
 
@@ -474,7 +475,7 @@ Deveremos incluir um parâmetro do tipo query **cliente_id** para que seja poss�
 
 Critérios de aceite:
 
-    - Caso seja enviado o parâmetro do tipo query **cliente_id**, filtrar os pedidos de acordo com o cliente, caso o id do cliente informado exista.
+    - Caso seja enviado o parâmetro do tipo query**cliente_id**, filtrar os pedidos de acordo com o cliente, caso o id do cliente informado exista.
     - Caso não seja informado o parâmetro do tipo query **cliente_id** todos os pedidos cadastrados deverão ser retornados.
 
 </details>
@@ -495,12 +496,12 @@ Critérios de aceite:
 <summary><b>Aprimorar cadastro/atualização de produto</b></summary>
 <br>
 
-Deverão ser aprimorados o cadastro e a atualização de produto para permitir vincular uma imagem a um produto. 
+Deverão ser aprimorados o cadastro e a atualização de produto para permitir vincular uma imagem a um produto.
 Deverá ser criada uma coluna `produto_imagem` para que seja possível efetuar o vínculo entre a imagem e o produto.
 
 Critérios de aceite:
-    
-    - O campo `produto_imagem` deve ser opcional, mas, em caso de ser enviado no corpo da requisição deveremos processar a imagem vinculada a essa propriedade e armazenar a imagem em um servidor de armazenamento (Supabase, Blackblaze, etc...)
+
+    - O campo`produto_imagem` deve ser opcional, mas, em caso de ser enviado no corpo da requisição deveremos processar a imagem vinculada a essa propriedade e armazenar a imagem em um servidor de armazenamento (Supabase, Blackblaze, etc...)
     - Armazenar na coluna `produto_imagem` a URL que possibilita visualizar a imagem que foi efetuada upload para o servidor de armazenamento.
 
 **Lembre-se:** A URL retornada deve ser válida, ou seja, ao ser clicada deve possibilitar visualizar a imagem que foi feito upload.
@@ -529,21 +530,111 @@ Deverá ser aprimorada a exclusão de produto para que quando o produto for excl
 Critérios de aceite:
 
     - Na exclusão do produto a imagem vinculada a este produto deverá ser excluída do servidor de armazenamento.
-    
+
 </details>
 
 </details>
+
+
+# Testando API PDV pelo render
+
+Você deverá utilizar um testador de rotas utilizando o link: eight-bit-api.onrender.com
+
+# Testando API PDV localmente (na máquina)
+
+# Instalação do Node.js
+
+Você deverá ter o motor V8 instalado em sua máquina para rodar a aplicação
+
+# Windows:
+
+Baixe o instalador: Acesse o site oficial do Node.js (https://nodejs.org) e baixe o instalador do Node.js para Windows.
+
+Execute o instalador: Depois de baixar, execute o arquivo do instalador e siga as instruções na tela.
+
+Conclua a instalação: Depois de seguir os passos, o Node.js e o npm (gerenciador de pacotes do Node) devem estar instalados no seu sistema.
+
+# macOS:
+
+Usando o instalador do site oficial: Baixe o instalador do Node.js para macOS no site oficial (https://nodejs.org).
+
+Execute o pacote: Abra o arquivo .pkg baixado e siga as instruções na tela para instalar o Node.js.
+
+Verifique a instalação: Abra o Terminal e digite node -v e npm -v para verificar se o Node.js e o npm foram instalados corretamente.
+
+# Linux:
+
+Usando o gerenciador de pacotes:
+Utilizando o terminal:
+
+Para distribuições baseadas em Debian/Ubuntu:
+
+```
+sudo apt-get update
+sudo apt-get install nodejs
+sudo apt-get install npm
+Para distribuições baseadas em Red Hat/Fedora:
+```
+
+```
+sudo dnf install nodejs
+sudo dnf install npm
+```
+
+# Instalação do PostgreSQL
+
+Você deverá ter o postgreSQL instalado em sua máquina para testar a aplicação localmente
+
+# Windows:
+
+Baixe o instalador: Acesse o site oficial do PostgreSQL (https://www.postgresql.org/download/windows/) e baixe o instalador para Windows.
+
+Execute o instalador: Após o download, execute o arquivo do instalador. Durante a instalação, você poderá configurar senhas para o usuário administrativo (postgres).
+
+Selecione componentes: Durante a instalação, você pode selecionar os componentes que deseja instalar, como o PostgreSQL Server e o pgAdmin (interface gráfica para gerenciamento).
+
+Conclua a instalação: Siga as instruções na tela para concluir a instalação.
+
+# macOS:
+
+Baixe o instalador: Acesse o site oficial do PostgreSQL (https://www.postgresql.org/download/macosx/) e baixe o instalador para macOS.
+
+Execute o instalador: Após o download, abra o arquivo do instalador e siga as instruções na tela para instalar o PostgreSQL.
+
+Conclua a instalação: O instalador vai guiá-lo pelo processo de instalação, onde você pode configurar a senha do usuário administrativo e outros parâmetros.
+
+# Linux:
+
+Usando o gerenciador de pacotes: Dependendo da distribuição, você pode instalar o PostgreSQL usando o gerenciador de pacotes. Por exemplo:
+
+Para distribuições baseadas em Debian/Ubuntu:
+
+```
+Copy code
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+```
+
+Para distribuições baseadas em Red Hat/Fedora:
+
+```
+sudo dnf install postgresql-server
+```
+
+Configuração inicial: Após a instalação, você pode precisar iniciar o serviço do PostgreSQL e configurá-lo usando comandos como sudo systemctl start postgresql e sudo systemctl enable postgresql.
+
+# Criação de credenciais env
+
+Você deverá criar na raiz do projeto um arquivo chamado ".env" e seguir o exemplo do arquivo .env.example
+
+Algumas rotas utilizam credenciais específicas para hospedagem de imagens na nuvem e envio de e-mails automáticos através de servidores SMTP, ou seja, para utiliza-las você deverá solicitar as credenciais em anjosdelacerda@gmail.com ou https://www.linkedin.com/in/lacerda-fernando/
+
+Caso não queria testar essas rotas em específico, a falta dessas credenciais apenas te impedirá de criar produtos hospedando imagens (o campo não é obrigatório) e os e-mails de confirmação de pedidos não será enviado.
+
+# Testando as rotas
+
+Para testar as rotas basta que você importe o arquivo 'Insomnia.json' que esta na raiz deste repositório dentro do seu testado de rotas (insomnia, postman). As rotas já estão separadas por classes.
+
+Recomendamos que primeiramente se crie um usuário em 'USER' e depois faça um login, pois assim as credenciais para rotas protegidas serão liberadas, as rotas já estão configuradas para receberem o token da rota de login.
 
 ---
-
-## Aulas úteis:
-
--   [Revisão](https://aulas.cubos.academy/turma/503b31f6-db13-4a79-8c3f-132b3d44e96f/aulas/9c29ca80-51cc-4f74-86a3-d27cee05fc48)
--   [Git e fluxo de trabalho em equipe](https://aulas.cubos.academy/turma/503b31f6-db13-4a79-8c3f-132b3d44e96f/aulas/2044890a-5d35-442a-85b1-f8481589a1a9)
--   [Deploy](https://aulas.cubos.academy/turma/503b31f6-db13-4a79-8c3f-132b3d44e96f/aulas/9be7d540-8f4d-4922-9e42-663656bd2475)
--   [Envio de e-mails](https://aulas.cubos.academy/turma/503b31f6-db13-4a79-8c3f-132b3d44e96f/aulas/9b85ed35-9833-444a-a424-80d6eeeeccbc)
--   [Validações e boas práticas](https://aulas.cubos.academy/turma/503b31f6-db13-4a79-8c3f-132b3d44e96f/aulas/61394330-479c-42de-ba1c-176f712990e5)
--   [Upload de arquivos](https://aulas.cubos.academy/turma/503b31f6-db13-4a79-8c3f-132b3d44e96f/aulas/f2821d48-b7b7-486a-8158-afacb145509f)
-
-
-###### tags: `back-end` `módulo 5` `nodeJS` `PostgreSQL` `API REST` `desafio``
