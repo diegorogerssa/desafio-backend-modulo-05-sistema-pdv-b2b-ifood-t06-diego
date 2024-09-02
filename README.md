@@ -538,7 +538,7 @@ Critérios de aceite:
 
 # Testando API PDV pelo render
 
-Você deverá utilizar um testador de rotas utilizando o link: eight-bit-api.onrender.com
+Você deverá utilizar um testador de rotas utilizando o link: (https://eight-bit-api.onrender.com)
 
 # Testando API PDV localmente (na máquina)
 
@@ -627,9 +627,6 @@ Configuração inicial: Após a instalação, você pode precisar iniciar o serv
 
 Você deverá criar na raiz do projeto um arquivo chamado ".env" e seguir o exemplo do arquivo .env.example
 
-Algumas rotas utilizam credenciais específicas para hospedagem de imagens na nuvem e envio de e-mails automáticos através de servidores SMTP, ou seja, para utiliza-las você deverá solicitar as credenciais em anjosdelacerda@gmail.com ou https://www.linkedin.com/in/lacerda-fernando/
-
-Caso não queria testar essas rotas em específico, a falta dessas credenciais apenas te impedirá de criar produtos hospedando imagens (o campo não é obrigatório) e os e-mails de confirmação de pedidos não será enviado.
 
 # Testando as rotas
 
